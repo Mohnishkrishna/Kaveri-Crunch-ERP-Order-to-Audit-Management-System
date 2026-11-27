@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: kaveri_erp_postgres
+    environment:
+      POSTGRES_DB: kaveri_erp
+      POSTGRES_USER: erp_user
+      POSTGRES_PASSWORD: change_me_in_production
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U erp_user -d kaveri_erp']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: kaveri_erp_app
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      SQL_HOST: postgres
+      SQL_DB_NAME: kaveri_erp
+      SQL_USER: erp_user
+      SQL_PASSWORD: change_me_in_production
+      SQL_ADMIN_USER: erp_user
+      SQL_ADMIN_PASSWORD: change_me_in_production
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:

@@ -1,0 +1,6 @@
+{
+  "name": "Kaveri Crunch ERP — Order-to-Audit Management System",
+  "description": "Integrated Food Manufacturing ERP for South Indian packaged snacks connecting Sales, GST Billing, Dispatch, Inventory Ledger, BOM Production, Costing, and Audit Reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

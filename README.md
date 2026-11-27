@@ -1,4 +1,3 @@
-
 # Kaveri Crunch ERP — Order-to-Audit Management System
 
 Integrated Food Manufacturing ERP designed for a small-scale South Indian packaged snacks manufacturer (**Murukku**, **Mixture**, **Chips**, **Sweets**) in Tamil Nadu. It connects field sales ordering, order verification, prototype GST billing, dispatch, ledger-based inventory, BOM-based production, variance analysis, weighted-average product costing, and audit reporting in a single modular monolith.
